@@ -7,5 +7,4 @@ class Post < ActiveRecord::Base
 
   include ActiveModel::Validations
   validates_with ClickbaitValidator
-
 end
