@@ -2,7 +2,7 @@ class ClickbaitValidator < ActiveModel::Validator
   def validate(record) 
     test=["Won't Believe", "Secret", "Top [number]","Guess"]
     test.each { |index|
-    if record.title.empty?
+    if record.title.blank?
       record.errors[:title]
     elsif record.title.include?(index)
        return
