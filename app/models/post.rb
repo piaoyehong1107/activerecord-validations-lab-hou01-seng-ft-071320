@@ -8,4 +8,5 @@ class Post < ActiveRecord::Base
   if title.valid?
     include ActiveModel::Validations
     validates_with ClickbaitValidator
+  end
 end
