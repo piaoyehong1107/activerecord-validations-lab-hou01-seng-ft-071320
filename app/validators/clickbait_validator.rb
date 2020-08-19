@@ -6,7 +6,7 @@ class ClickbaitValidator < ActiveModel::Validator
       record.errors[:title]
     elsif record.title.include?(index)
        return
-     end
+    end
       record.errors[:clickbait]<< "not valid"
     }
   end
