@@ -1,13 +1,11 @@
 class Post < ActiveRecord::Base
-  
-  validate :validtitle
-  
-  def validtitle
-    validate :title, presence: true
-  end
-  
+ 
+  validates :title, presence: true
   validates :content, length: {minimum: 250}
   validates :summary, length: {maximum: 250}
   validates :category, inclusion: { in: %w(Fiction Non-Fiction)}
-  
+
+  include ActiveModel::Validations
+  validates_with ClickbaitValidator
+
 end
