@@ -4,7 +4,7 @@ class ClickbaitValidator < ActiveModel::Validator
     test.each { |index|
     if record.title.empty?
       record.errors[:title]
-    if record.title.include?(index)
+    elsif record.title.include?(index)
        return
      end
       record.errors[:clickbait]<< "not valid"
